@@ -2,11 +2,11 @@ import pandas as pd
 import statsmodels.api as sm
 from scipy import stats
 
-# Membaca dataset
-df = pd.read_csv("Dataset/ANIME_CLEANED.csv", sep=';', engine='python', encoding='utf-8')
+# Membaca dataset 1000 data
+df = pd.read_csv("Dataset/ANIME_CLEANED_1000data.csv", sep=';', engine='python', encoding='utf-8')
 df.dropna()
-# Mengambil 100 data dari 1000 data
-df_sample = df.sample(n=100, random_state=69)
+# Membaca dataset 100 data
+df_sample = pd.read_csv("Dataset/ANIME_CLEANED_100data.csv", sep=';', engine='python', encoding='utf-8')
 
 # 1. Analisis dengan 5 variabel numerik menggunakan Python
 X_sample = df_sample[['Ranked', 'Popularity', 'Favorites', 'Watching', 'Completed']]
