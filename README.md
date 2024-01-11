@@ -2,5 +2,7 @@ Some people just want to see the world burn or just to see some student suffer b
 
 
 Tugas Quiz Pekan UAS Statistika 3C
+
 Video ini dibuat guna memenuhi tugas Quiz Pekan UAS Statistika 3C
+
 Dosen Pengampu : Vinna Rahmayanti S, S.I., M.Si
