@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 import statsmodels.api as sm
 from statsmodels.stats.stattools import durbin_watson
 import matplotlib.pyplot as plt

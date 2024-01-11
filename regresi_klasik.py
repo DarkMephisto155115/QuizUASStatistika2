@@ -36,9 +36,9 @@ model_full = sm.OLS(y_full, X_full).fit()
 print("\nHasil Regresi untuk 10 Variabel Numerik:")
 print(model_full.summary())
 
-# 3. Uji Parsial (t-test) untuk variabel 'Popularity' pada data 100 sample
-t_stat, p_value = stats.ttest_ind(df_sample['Popularity'], df_sample['Members'])
-print(f"\nUji Parsial (t-test) untuk variabel 'Popularity' pada data 100 sample:")
+# 3. Uji Parsial (t-test) untuk variabel 'Popularity' pada data 1000 sample
+t_stat, p_value = stats.ttest_ind(df['Popularity'], df['Members'])
+print(f"\nUji Parsial (t-test) untuk variabel 'Popularity' pada data 1000 sample:")
 print(f"T-Stat: {t_stat}, P-Value: {p_value}")
 if p_value < 0.05:
     print("Variabel 'Popularity' signifikan secara parsial.")
@@ -46,11 +46,12 @@ else:
     print("Variabel 'Popularity' tidak signifikan secara parsial.")
 
 # 4. Uji Simultan Regresi (F-test) untuk model dengan 10 variabel numerik
-f_test = model_full.wald_test("Score = Episodes = Premiered = Ranked = Popularity = Favorites = Watching = Completed = On-Hold = Dropped")
+f_test = model_full.wald_test("Score = Episodes = Premiered = Ranked = Popularity = Favorites = Watching = Completed = On-Hold = Dropped = 0")
 f_stat = f_test.statistic[0][0]
 f_p_value = f_test.pvalue
 
 print(f"\nUji Simultan Regresi (F-test) untuk model dengan 10 variabel numerik:")
+format(f_p_value, '.6f')
 print(f"F-Stat: {f_stat}, P-Value: {f_p_value}")
 if f_p_value < 0.05:
     print("Model regresi secara keseluruhan signifikan.")

@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 import statsmodels.api as sm
 from statsmodels.stats.diagnostic import het_breuschpagan
 from statsmodels.compat import lzip
